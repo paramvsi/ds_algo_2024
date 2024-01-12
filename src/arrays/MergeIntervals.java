@@ -1,28 +1,38 @@
 package arrays;
 
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
+
 // Given a set of time intervals in any order, our task is to merge all overlapping intervals
 // into one and output the result which should have only mutually exclusive intervals.
 public class MergeIntervals {
+    public static void main(String[] args) {
+        int[][] arr = {{1, 3}, {2, 4}, {6, 8}, {9, 10}};
+        int[][] res = mergeIntervals(arr);
 
-    static class Interval {
-        int start, end;
-
-        Interval(int start, int end) {
-            this.start = start;
-            this.end = end;
+        for(int[] a: res){
+            System.out.print(Arrays.toString(a)+"  ");
         }
     }
 
-    public static void main(String[] args) {
-        Interval[] arr = new Interval[4];
-        arr[0] = new Interval(6, 8);
-        arr[1] = new Interval(1, 9);
-        arr[2] = new Interval(2, 4);
-        arr[3] = new Interval(4, 7);
-        mergeIntervals(arr);
-    }
+    private static int[][] mergeIntervals(int[][] arr) {
+        if (arr.length == 1) return arr;
 
-    private static void mergeIntervals(Interval[] arr) {
-       // To Do
+        List<int[]> result = new ArrayList<>();
+
+        int[] newInterval = arr[0];
+        result.add(newInterval);
+
+        for (int[] item : arr) {
+            if (item[0] <= newInterval[1]) {
+                newInterval[1] = Math.max(newInterval[1], item[1]);
+            } else {
+                newInterval = item;
+                result.add(newInterval);
+            }
+        }
+
+        return result.toArray(new int [result.size()][]);
     }
 }
