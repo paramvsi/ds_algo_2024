@@ -2,6 +2,7 @@ package arrays;
 
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.Comparator;
 import java.util.List;
 
 // Given a set of time intervals in any order, our task is to merge all overlapping intervals
@@ -20,6 +21,8 @@ public class MergeIntervals {
         if (arr.length == 1) return arr;
 
         List<int[]> result = new ArrayList<>();
+
+        Arrays.sort(arr, Comparator.comparingInt(i -> i[0]));
 
         int[] newInterval = arr[0];
         result.add(newInterval);
