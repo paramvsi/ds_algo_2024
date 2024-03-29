@@ -1,4 +1,4 @@
-package arrays;
+package sheet.arrays;
 
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -7,7 +7,7 @@ import java.util.List;
 
 // Given a set of time intervals in any order, our task is to merge all overlapping intervals
 // into one and output the result which should have only mutually exclusive intervals.
-public class MergeIntervals {
+public class Problem07MergeIntervals {
     public static void main(String[] args) {
         int[][] arr = {{1, 3}, {2, 4}, {6, 8}, {9, 10}};
         int[][] res = mergeIntervals(arr);

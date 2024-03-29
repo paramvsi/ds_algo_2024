@@ -1,5 +1,4 @@
-package arrays;
-
+package sheet.arrays;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -7,7 +6,7 @@ import java.util.List;
 // Given an array of n elements that contains elements from 0 to n-1, with any of these
 // numbers appearing any number of times.
 // Find these repeating numbers in O(n) and use only constant memory space.
-public class FindDuplicatesInNPlusOneInteger {
+public class Problem07FIndDupInArrayOfNPlusOneInteger {
     public static void main(String[] args) {
         int[] arr = {1, 2, 3, 6, 3, 6, 1};
 
@@ -17,7 +16,7 @@ public class FindDuplicatesInNPlusOneInteger {
     private static String findDuplicates(int[] arr) {
         List<Integer> result = new ArrayList<>();
 
-        for (int i = 0; i < arr.length; i++) {
+        for(int i = 0; i < arr.length; i++){
             int index = Math.abs(arr[i]);
 
             if (arr[index] < 0) {
