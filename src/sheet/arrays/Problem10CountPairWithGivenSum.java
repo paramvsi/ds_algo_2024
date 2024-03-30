@@ -3,7 +3,7 @@ package sheet.arrays;
 import java.util.HashMap;
 import java.util.Map;
 
-//Given an array of N integers, and an integer K,
+// Given an array of N integers, and an integer K,
 // the task is to find the number of pairs of integers in the array whose sum is equal to K.
 public class Problem10CountPairWithGivenSum {
     public static void main(String[] args) {
