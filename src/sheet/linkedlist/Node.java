@@ -10,4 +10,13 @@ public class Node {
         this.prev = null;
         this.next = null;
     }
+
+    void printList() {
+        Node current = this;
+        while (current != null) {
+            System.out.print(current.data + " -> ");
+            current = current.next;
+        }
+        System.out.println("null");
+    }
 }
