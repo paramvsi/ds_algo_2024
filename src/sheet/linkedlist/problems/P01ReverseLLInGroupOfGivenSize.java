@@ -1,6 +1,6 @@
 package sheet.linkedlist.problems;
 
-public class Problem01ReverseLLInGroupOfGivenSize {
+public class P01ReverseLLInGroupOfGivenSize {
     public static ListNode reverseInGroups(ListNode head, int k) {
         if (head == null || k == 1) {
             return head;

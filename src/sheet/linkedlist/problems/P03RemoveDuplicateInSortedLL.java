@@ -1,26 +1,21 @@
 package sheet.linkedlist.problems;
 
-import java.util.HashSet;
-
-public class Problem04RemoveDuplicatesInUnsortedLL {
+public class P03RemoveDuplicateInSortedLL {
     public static void removeDuplicates(ListNode head) {
-        HashSet<Integer> seen = new HashSet<>();
         ListNode current = head;
-        ListNode prev = null;
 
-        while (current != null) {
-            if (seen.contains(current.val)) {
+        while (current != null && current.next != null) {
+            if (current.val == current.next.val) {
                 // Duplicate found, remove it
-                prev.next = current.next;
+                current.next = current.next.next;
             } else {
-                // Add value to the HashSet and move the prev pointer
-                seen.add(current.val);
-                prev = current;
+                // Move to the next distinct element
+                current = current.next;
             }
-            current = current.next;
         }
     }
 
+    // Method to print the linked list
     public static void printList(ListNode head) {
         while (head != null) {
             System.out.print(head.val + " ");
@@ -31,10 +26,10 @@ public class Problem04RemoveDuplicatesInUnsortedLL {
 
     public static void main(String[] args) {
         ListNode head = new ListNode(1);
-        head.next = new ListNode(3);
+        head.next = new ListNode(1);
         head.next.next = new ListNode(2);
         head.next.next.next = new ListNode(3);
-        head.next.next.next.next = new ListNode(2);
+        head.next.next.next.next = new ListNode(3);
 
         System.out.println("Original list:");
         printList(head);

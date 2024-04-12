@@ -1,6 +1,6 @@
 package sheet.linkedlist.problems;
 
-public class Problem02DeleteLoopInLL {
+public class P02DeleteLoopInLL {
     public static void removeLoop(ListNode head) {
         if (head == null || head.next == null) {
             return;

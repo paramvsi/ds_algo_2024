@@ -1,6 +1,6 @@
 package sheet.linkedlist.problems;
 
-public class Problem05RotateLLByOne {
+public class P05RotateLLByOne {
     public static ListNode moveLastToFront(ListNode head) {
         if (head == null || head.next == null) {
             return head; // No need to move if the list is empty or has only one element
