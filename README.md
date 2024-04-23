@@ -47,3 +47,12 @@ are categorized into various topics and are designed to help you improve your co
 - Heap
 
   ![img_13.png](img_13.png)
+
+### More notes
+
+The Rabin-Karp algorithm is a string-searching (or substring searching) algorithm that uses hashing to find any one of a set of pattern strings in a text. It is particularly useful when dealing with multiple patterns and when the patterns are expected to be of the same length. The advantage of this algorithm is that its average and best case time complexity is
+O(n+m), where n is the length of the text and
+m is the length of the pattern. However, its worst-case time complexity is
+O(nm), which can occur due to the possibility of hash collisions.
+
+The Knuth-Morris-Pratt (KMP) algorithm is an efficient string searching (or substring searching) algorithm that improves the worst-case time complexity to O(n+m), where n is the length of the text and m is the length of the pattern. This efficiency is achieved by using a preprocessing step to create a partial match table (also known as the "prefix table" or "failure function") that helps to skip unnecessary comparisons in the search process.

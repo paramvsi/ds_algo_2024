@@ -1,0 +1,9 @@
+
+# Recursion
+
+1. Make Input Smaller. But why? -- Actually we dont make input small, we divide the problem into sub-problems and as
+   a result input gets smaller. We take some decisions as a result which results in smaller input.
+2. When use recursion? -- To identify if we want to choose between some choices and take decision on that choices
+3. Recursive Tree -- Most Important -- If we design it recursive tree problem becomes super simple.
+4. Base Condition - Hypothesis - Induction -- Smallest Valid Input - Choose a hypothesis - Use Induction to solve hypothesis
+5. IBH method is mostly used for Tree and LL
