@@ -14,11 +14,11 @@ public class S11PrintAllSubArrayWith0Sum {
         for (int i = 0; i < arr.length; i++) {
             sum += arr[i];
             if (sum == 0) {
-                // If the current prefix sum is 0, it means the subarray from the beginning to the current index has a sum of 0
+                // If the current prefix sum is 0, it means the subArray from the beginning to the current index has a sum of 0
                 result.add(Arrays.asList(0, i));
             }
             if (map.containsKey(sum)) {
-                // If the same prefix sum is found again, it means the subarray between the previous occurrence and the current index has a sum of 0
+                // If the same prefix sum is found again, it means the subArray between the previous occurrence and the current index has a sum of 0
                 List<Integer> list = map.get(sum);
                 for (int index : list) {
                     result.add(Arrays.asList(index + 1, i));
@@ -31,9 +31,9 @@ public class S11PrintAllSubArrayWith0Sum {
             map.get(sum).add(i);
         }
 
-        // Print all subarrays with a sum of 0
-        for (List<Integer> subarray : result) {
-            System.out.println("Subarray with sum 0 found from index " + subarray.get(0) + " to " + subarray.get(1));
+        // Print all subArrays with a sum of 0
+        for (List<Integer> subArray : result) {
+            System.out.println("subArray with sum 0 found from index " + subArray.get(0) + " to " + subArray.get(1));
         }
     }
 
