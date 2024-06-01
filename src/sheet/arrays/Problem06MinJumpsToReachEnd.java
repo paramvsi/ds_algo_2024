@@ -9,26 +9,34 @@ public class Problem06MinJumpsToReachEnd {
     }
 
     private static int findMinJumps(int[] arr) {
-        int totalJumps = 0;
-        int destination = arr.length - 1;
-        int coverage = 0;
-        int lastIdx = 0;
+        if (arr.length <= 1) return 0;
 
-        if (arr.length == 1) return 0;
+        if (arr[0] >= arr.length - 1) return 1;
 
-        for (int i = 0; i <= arr.length - 1; i++) {
-            coverage = Math.max(coverage, i + arr[i]);
+        if (arr[0] == 0) return -1;
 
-            if (i == lastIdx) {
-                lastIdx = coverage;
-                totalJumps++;
+        int maxReach = arr[0];
+        int step = arr[0];
+        int jump = 1;
 
-                if (coverage >= destination) {
-                    return totalJumps;
-                }
+        for (int i = 1; i < arr.length; i++) {
+            if (i == arr.length - 1) return jump;
+
+            if (arr[i] >= (arr.length - 1) - i) return jump + 1;
+
+            maxReach = Math.max(maxReach, i + arr[i]);
+
+            step--;
+
+            if (step == 0) {
+                jump++;
+
+                if (i >= maxReach) return -1;
+
+                step = maxReach - i;
             }
         }
 
-        return totalJumps;
+        return -1;
     }
 }
