@@ -25,6 +25,4 @@ public class Problem15FindIfAIsSubsetOfB {
 
         return s.size() == p;
     }
-
-
 }
