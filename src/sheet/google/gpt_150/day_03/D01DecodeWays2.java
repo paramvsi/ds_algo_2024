@@ -33,26 +33,25 @@ public class D01DecodeWays2 {
             }
 
             // Two-character decoding
-            long l = (dp[i] + dp[i - 2]) % MOD;
             if (previous == '*') {
                 if (current == '*') {
                     dp[i] = (dp[i] + 15 * dp[i - 2]) % MOD; // "**" can form 11-19 and 21-26
                 } else if (current <= '6') {
                     dp[i] = (dp[i] + 2 * dp[i - 2]) % MOD; // "*1"-"*6" -> 11-16 and 21-26
                 } else {
-                    dp[i] = l; // "*7"-"*9" -> 17-19 only
+                    dp[i] = (dp[i] + dp[i - 2]) % MOD; // "*7"-"*9" -> 17-19 only
                 }
             } else if (previous == '1') {
                 if (current == '*') {
                     dp[i] = (dp[i] + 9 * dp[i - 2]) % MOD; // "1*" -> 11-19
                 } else {
-                    dp[i] = l; // "1X" -> valid two-character decoding
+                    dp[i] = (dp[i] + dp[i - 2]) % MOD; // "1X" -> valid two-character decoding
                 }
             } else if (previous == '2') {
                 if (current == '*') {
                     dp[i] = (dp[i] + 6 * dp[i - 2]) % MOD; // "2*" -> 21-26
                 } else if (current <= '6') {
-                    dp[i] = l; // "2X" where X <= 6 -> valid two-character decoding
+                    dp[i] = (dp[i] + dp[i - 2]) % MOD; // "2X" where X <= 6 -> valid two-character decoding
                 }
             }
         }
